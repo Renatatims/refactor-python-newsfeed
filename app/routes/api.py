@@ -1,12 +1,22 @@
 from flask import Blueprint
 from app.models import User
 from app.db import get_db
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 
 @bp.route('/users', methods=['POST'])
 def signup():
   data = request.get_json()
-  print(data)
-  return ''
+  db = get_db()
+  #print(data)
+  # create a new user
+  newUser = User(
+    username = data['username'],
+    email = data['email'],
+    password = data['password']
+  )
+  # save in database
+  db.add(newUser)
+  db.commit()
+  return jsonify(id = newUser.id)
