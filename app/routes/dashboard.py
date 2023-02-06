@@ -6,7 +6,7 @@ bp = Blueprint('dashboard', __name__, url_prefix='/dashboard')
 
 @bp.route('/')
 def dash():
-  # User's posts are shown in dashboard
+  # User's posts are displayed in the dashboard
   db = get_db()
   posts = (
     db.query(Post)
@@ -20,6 +20,16 @@ def dash():
     loggedIn=session.get('loggedIn')
   )
 
+#Edit posts by id
 @bp.route('/edit/<id>')
 def edit(id):
-  return render_template('edit-post.html')
+  # get single post by id
+  db = get_db()
+  post = db.query(Post).filter(Post.id == id).one()
+
+  # render edit page
+  return render_template(
+    'edit-post.html',
+    post=post,
+    loggedIn=session.get('loggedIn')
+  )
