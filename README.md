@@ -5,9 +5,8 @@
 Code refactor - newsfeed app originally built using Node.js, refactored to use Python
 
 ## Preview
-<div style="border: 1px solid black; padding: 5px;">
-  <img src="app/static/images/Capture1.PNG" alt="Preview">
-</div>
+<img src="app/static/images/Capture1.PNG" alt="Preview" style="border: 1px solid black; padding: 5px;">
+
 ## Link to Application
 App available at: https://renata-newsfeed-python.herokuapp.com/
 
@@ -70,9 +69,7 @@ python -m flask run
 7. Responsive design to adapt to different screen sizes
 8. Deployment using Gunicorn for a production-ready server.
 
-<div style="border: 1px solid black; padding: 5px;">
-  <img src="app/static/images/Capture1.PNG" alt="Preview">
-</div>
+<img src="app/static/images/Capture1.PNG" alt="Preview" style="border: 1px solid black; padding: 5px;">
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
